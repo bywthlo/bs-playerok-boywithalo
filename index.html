@@ -1,0 +1,471 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Brawl Stars Guide</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&family=Raleway:wght@400;700;800&display=swap"
+        rel="stylesheet">
+    <style>
+        :root {
+            --glass-bg: rgba(255, 255, 255, 0.07);
+            --glass-border: rgba(255, 255, 255, 0.15);
+            --glass-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+            --text-main: #ffffff;
+            --text-muted: #e0e0e0;
+            --accent: #ffc107;
+            --accent-hover: #ffca2c;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: #0f0518;
+            background-image: radial-gradient(circle at 50% 0%, #2a0e45 0%, transparent 70%);
+            color: var(--text-main);
+            min-height: 100vh;
+            padding: 2rem;
+            -webkit-user-select: none;
+            /* Safari */
+            -moz-user-select: none;
+            /* Firefox */
+            -ms-user-select: none;
+            /* IE10+/Edge */
+            user-select: none;
+            /* Standard */
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        header {
+            grid-column: 1 / -1;
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+
+        h1 {
+            font-family: 'Raleway', sans-serif;
+            font-size: 3rem;
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            text-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+            margin-bottom: 0.5rem;
+        }
+
+        p.subtitle {
+            font-size: 1.1rem;
+            color: var(--text-muted);
+            font-weight: 300;
+        }
+
+        .card {
+            background: var(--glass-bg);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid var(--glass-border);
+            border-radius: 20px;
+            padding: 1.5rem;
+            box-shadow: var(--glass-shadow);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 12px 40px 0 rgba(0, 0, 0, 0.5);
+            border-color: rgba(255, 255, 255, 0.3);
+        }
+
+        h2 {
+            font-family: 'Raleway', sans-serif;
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            color: var(--accent);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            padding-bottom: 0.5rem;
+        }
+
+        h3 {
+            font-family: 'Raleway', sans-serif;
+            font-size: 1.1rem;
+            font-weight: 600;
+            margin-top: 1rem;
+            margin-bottom: 0.5rem;
+            color: #fff;
+        }
+
+        p {
+            margin-bottom: 0.8rem;
+            line-height: 1.6;
+            font-size: 0.95rem;
+            color: var(--text-muted);
+        }
+
+        ul,
+        ol {
+            margin-left: 1.5rem;
+            margin-bottom: 1rem;
+            color: var(--text-muted);
+        }
+
+        li {
+            margin-bottom: 0.4rem;
+        }
+
+        .selectable {
+            -webkit-user-select: text;
+            -moz-user-select: text;
+            -ms-user-select: text;
+            user-select: text;
+            background: rgba(0, 0, 0, 0.2);
+            padding: 2px 6px;
+            border-radius: 4px;
+            color: #fff;
+            font-family: monospace;
+            cursor: text;
+            border: 1px dashed rgba(255, 255, 255, 0.3);
+            display: inline-block;
+        }
+
+        a {
+            color: var(--accent);
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.2s;
+            -webkit-user-select: text;
+            -moz-user-select: text;
+            -ms-user-select: text;
+            user-select: text;
+            cursor: pointer;
+        }
+
+        a:hover {
+            color: var(--accent-hover);
+            text-decoration: underline;
+        }
+
+        .badge {
+            display: inline-block;
+            padding: 0.25rem 0.75rem;
+            border-radius: 50px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+            background: rgba(255, 255, 255, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .warning {
+            color: #ff6b6b;
+            font-weight: 600;
+        }
+
+        .highlight {
+            color: #4fc3f7;
+        }
+
+        @media (max-width: 768px) {
+            body {
+                padding: 1rem;
+            }
+
+            h1 {
+                font-size: 2rem;
+            }
+        }
+
+        .copy-btn {
+            background: rgba(255, 255, 255, 0.1);
+            border: 1px solid var(--accent);
+            color: var(--accent);
+            padding: 5px 12px;
+            border-radius: 6px;
+            cursor: pointer;
+            font-family: 'Poppins', sans-serif;
+            font-size: 0.8rem;
+            margin-left: 10px;
+            transition: all 0.2s;
+        }
+
+        .copy-btn:hover {
+            background: var(--accent);
+            color: #000;
+        }
+
+        .copy-btn:active {
+            transform: scale(0.95);
+        }
+
+        .brand-mark {
+            color: var(--accent);
+            font-size: 0.4em;
+            vertical-align: super;
+            opacity: 0.8;
+        }
+
+        footer {
+            grid-column: 1 / -1;
+            text-align: center;
+            margin-top: 2rem;
+            padding: 2rem;
+            color: var(--text-muted);
+            font-size: 0.9rem;
+            border-top: 1px solid var(--glass-border);
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+        <header>
+            <h1>Brawl Stars Guide <span class="brand-mark">by boywithalo</span></h1>
+            <p class="subtitle">Секреты, тактики и полезные ссылки<br> <a href="https://playerok.com/profile/boywithalo/products">https://playerok.com/profile/boywithalo/products</a></p>
+        </header>
+
+        <!-- Card: Shop -->
+        <div class="card" style="border: 1px solid var(--accent); box-shadow: 0 0 20px rgba(255, 193, 7, 0.1);">
+            <span class="badge" style="background: var(--accent); color: #1a0b2e;">Рекомендую</span>
+            <h2>Магазин boywithalo</h2>
+            <p>Топовые товары, аккаунты и услуги. Залетай 👇</p>
+            <div style="margin-top: 1rem;">
+                <a href="https://playerok.com/profile/boywithalo/products" target="_blank"
+                    style="display: block; text-align: center; background: var(--accent); color: #1a0b2e; padding: 12px; border-radius: 10px; font-weight: 700; text-decoration: none; transition: transform 0.2s;">
+                    Открыть Playerok
+                </a>
+            </div>
+        </div>
+
+        <!-- Card: Free Gems -->
+        <div class="card">
+            <span class="badge">Халява</span>
+            <h2>Бесплатные 10 гемов</h2>
+            <p>Каждые 30 дней через Supercell Store:</p>
+            <ol>
+                <li>Перейди на <a href="https://store.supercell.com" target="_blank">store.supercell.com</a>.</li>
+                <li>Войди через Supercell ID.</li>
+                <li>Выбери игру (Brawl Stars).</li>
+                <li>Забери бонус (10 гемов).</li>
+            </ol>
+            <p class="subtitle" style="margin-top: 1rem;">📌 Важно:</p>
+            <ul>
+                <li>Работает раз в 30 дней.</li>
+                <li>Без доната и карт.</li>
+                <li>Автозабора нет, нужно заходить вручную.</li>
+            </ul>
+        </div>
+
+        <!-- Card 1: Rank Up -->
+        <div class="card">
+            <span class="badge">Геймплей</span>
+            <h2>Как сделать анскилов до 2000!?</h2>
+            <p>Меняете регион на <span class="highlight">Австралию</span>.</p>
+            <p>Играйте с <strong>12 ночи до 4 ночи</strong> (2-3 часа) по МСК!</p>
+            <p>Играйте на <strong>ОДНОМ</strong> бойце и в режиме <strong>Захват кристаллов</strong>.</p>
+            <p>Примерно после 2 часов начнут попадаться слабые игроки.</p>
+            <h3>Про ранг против анскилов</h3>
+            <p>У вас все персонажи должны быть на <strong>0 кубков</strong>. Когда вы начнете играть в ранговый бой, вам
+                будут попадаться только анскилы.</p>
+        </div>
+
+        <!-- Card 2: Farm Wins -->
+        <div class="card">
+            <span class="badge">Абуз</span>
+            <h2>Фарм побед 3x3</h2>
+            <p>Способ для телефонов и ПК. Требуется <strong>автокликер</strong>.</p>
+            <ol>
+                <li>Дождитесь режима <strong>«Большая игра»</strong>.</li>
+                <li>Настройте автокликер на кнопки <strong>«Играть»</strong> и <strong>«Атака»</strong>.</li>
+                <li>Кнопку атаки переместите в безопасное место (смена управления), чтобы не задевать интерфейс лобби.
+                </li>
+                <li>Убедитесь, что клики не попадают на отмену поиска или выход.</li>
+                <li>Проследите за первой игрой лично.</li>
+            </ol>
+            <p class="warning">Важно: Сделайте минимальную яркость и поставьте устройство на зарядку!</p>
+        </div>
+
+        <!-- Card 3: Remove Passengers -->
+        <div class="card">
+            <span class="badge">Безопасность</span>
+            <h2>Как избавиться от посторонних людей</h2>
+            <h3>Способ 1: Поддержка</h3>
+            <p>Выньте сим-карту. Напишите, что продали телефон, а пассажир играет с него. Потребуются данные:</p>
+            <ul>
+                <li>Дата и место создания аккаунта</li>
+                <li>Тег клана и твой тег</li>
+                <li>Девайсы и IP адреса</li>
+            </ul>
+            <h3>Способ 2: BSD Brawl</h3>
+            <p>Использовать функцию "Выгнать пассажира" в настройках мода.</p>
+            <h3>Способ 3: SMS Activate</h3>
+            <p>Смените регион на США/Индонезию. Купите номер в <span class="selectable">SMS Activate</span> <button
+                    class="copy-btn" onclick="copyText('SMS Activate')">Копировать</button>. Привяжите номер к Supercell
+                ID ("Защита учетной записи").</p>
+            <p class="warning">ОБЯЗАТЕЛЬНО СОХРАНИТЕ КОДЫ ВОССТАНОВЛЕНИЯ!</p>
+        </div>
+
+        <!-- Card 4: Empty Nickname -->
+        <div class="card">
+            <span class="badge">Кастомизация</span>
+            <h2>Пустой никнейм</h2>
+            <p>Скопируйте символ внутри кавычек и вставьте в поле смены ника:</p>
+            <div style="text-align: center; margin: 1rem 0;">
+                <span class="selectable" id="empty-nick">⠀</span>
+                <button class="copy-btn" onclick="copyText('⠀')">Копировать символ</button>
+            </div>
+            <p><em>(Символ выше можно выделить и скопировать)</em></p>
+        </div>
+
+        <!-- Card 5: Account Recovery -->
+        <div class="card">
+            <span class="badge">Поддержка</span>
+            <h2>Восстановление аккаунта</h2>
+            <h3>С Supercell ID</h3>
+            <p>Войдите через настройки, если есть доступ к почте.</p>
+            <h3>Без Supercell ID</h3>
+            <p>Обратитесь в поддержку для создания Supercell ID. Подготовьте новую почту.</p>
+            <h3>Как написать в поддержку</h3>
+            <ol>
+                <li>Настройки -> «Помощь и поддержка»</li>
+                <li>Синий пузырь сообщения (справа сверху)</li>
+            </ol>
+            <p>Если страна заблокирована: вытащите симку, смените регион на США, создайте новый аккаунт для связи.</p>
+        </div>
+
+        <!-- Card 6: Gifts -->
+        <div class="card">
+            <span class="badge">Халява</span>
+            <h2>Подарки и Ссылки</h2>
+            <ul>
+                <li><a href="https://clck.ru/3ADWxE" target="_blank">Клоун</a></li>
+                <li><a href="https://clck.ru/3ADWxV" target="_blank">Пин со скримером</a></li>
+                <li><a href="https://clck.ru/3ADWxj" target="_blank">100 монет</a></li>
+                <li><a href="https://clck.ru/3ADWyh" target="_blank">Чёрно-белый скин</a></li>
+                <li><a href="https://clck.ru/3ADWyy" target="_blank">Зелёное яйцо</a></li>
+            </ul>
+            <h3>Иконки</h3>
+            <ul>
+                <li><a href="https://link.brawlstars.com/ru/?action=voucher&code=3484c6d2-9ab5-4eae-878a-4a186fc4e24a"
+                        target="_blank">Иконка 1</a></li>
+                <li><a href="https://link.brawlstars.com/ru/?action=voucher&code=ab9cf7c2-45f8-4012"
+                        target="_blank">Иконка 2</a></li>
+            </ul>
+        </div>
+
+        <!-- Card 7: Matcherino -->
+        <div class="card">
+            <span class="badge">Турниры</span>
+            <h2>Матч (Matcherino)</h2>
+            <ol>
+                <li>Зайдите на сайт <span class="selectable">Matcherino</span> <button class="copy-btn"
+                        onclick="copyText('Matcherino')">Копировать</button>.</li>
+                <li>Зарегистрируйтесь.</li>
+                <li>Привяжите Supercell ID: <br><code>Profile > Settings > Link Social Accounts</code></li>
+                <li>Перейдите в <strong>Events</strong>, выберите <strong>Brawl Stars</strong>.</li>
+                <li>Выберите турнир (ищите значок Chasmac).</li>
+            </ol>
+        </div>
+
+        <!-- Card 8: Star Shelly -->
+        <!-- <div class="card">
+            <span class="badge">Эксклюзив</span>
+            <h2>Звездная Шелли</h2>
+            <p>8 способов (на самом деле меньше реальных):</p>
+            <ol>
+                <li>Быть игроком с 2018 года (до 2019).</li>
+                <li>Купить старый аккаунт (рискованно).</li>
+                <li>Официальный возврат (маловероятно, но следите за новостями).</li>
+            </ol>
+            <p class="subtitle">Если подарки не понравились — возврат не делается 😉</p>
+        </div> -->
+
+    </div>
+
+    <footer>
+        <p>Created by <strong>boywithalo</strong></p>
+        <p style="font-size: 0.8em; opacity: 0.6;"> https://playerok.com/profile/boywithalo/products</p>
+    </footer>
+
+    <script>
+        function copyText(text) {
+            navigator.clipboard.writeText(text).then(() => {
+                // Optional: Show feedback
+                const btn = event.target;
+                const originalText = btn.innerText;
+                btn.innerText = 'Скопировано!';
+                setTimeout(() => {
+                    btn.innerText = originalText;
+                }, 2000);
+            }).catch(err => {
+                console.error('Failed to copy: ', err);
+            });
+        }
+
+        // --- Anti-Inspect Protection ---
+
+        // 1. Disable Right Click
+        document.addEventListener('contextmenu', event => event.preventDefault());
+
+        // 2. Disable Keyboard Shortcuts (F12, Ctrl+Shift+I, Ctrl+U, etc.)
+        document.addEventListener('keydown', function (e) {
+            // F12
+            if (e.keyCode == 123) {
+                e.preventDefault();
+                return false;
+            }
+            // Ctrl+Shift+I (Inspect)
+            if (e.ctrlKey && e.shiftKey && e.keyCode == 73) {
+                e.preventDefault();
+                return false;
+            }
+            // Ctrl+Shift+C (Inspect Element)
+            if (e.ctrlKey && e.shiftKey && e.keyCode == 67) {
+                e.preventDefault();
+                return false;
+            }
+            // Ctrl+Shift+J (Console)
+            if (e.ctrlKey && e.shiftKey && e.keyCode == 74) {
+                e.preventDefault();
+                return false;
+            }
+            // Ctrl+U (View Source)
+            if (e.ctrlKey && e.keyCode == 85) {
+                e.preventDefault();
+                return false;
+            }
+        });
+
+        // 3. Debugger Trap (Freezes browser if DevTools is opened)
+        // Warning: This can be annoying for you if you try to debug!
+        setInterval(function () {
+            const before = new Date().getTime();
+            debugger;
+            const after = new Date().getTime();
+            if (after - before > 100) {
+                // DevTools is likely open
+                document.body.innerHTML = '<div style="color:white;text-align:center;padding-top:20%;">Access Denied</div>';
+            }
+        }, 1000);
+    </script>
+
+</body>
+
+</html>
