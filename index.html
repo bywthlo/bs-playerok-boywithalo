@@ -230,6 +230,104 @@
             font-size: 0.9rem;
             border-top: 1px solid var(--glass-border);
         }
+
+        /* Bonuses Section Styles */
+        details.bonus-details {
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 12px;
+            overflow: hidden;
+            transition: all 0.3s ease;
+            margin-top: 1rem;
+        }
+
+        details.bonus-details[open] {
+            background: rgba(255, 255, 255, 0.08);
+        }
+
+        summary.bonus-summary {
+            padding: 1rem;
+            cursor: pointer;
+            font-weight: 600;
+            color: var(--accent);
+            list-style: none;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            user-select: none;
+        }
+
+        summary.bonus-summary::-webkit-details-marker {
+            display: none;
+        }
+
+        summary.bonus-summary::after {
+            content: '+';
+            font-size: 1.5rem;
+            font-weight: 400;
+            transition: transform 0.3s;
+            line-height: 1;
+        }
+
+        details.bonus-details[open] summary.bonus-summary::after {
+            transform: rotate(45deg);
+        }
+
+        .bonus-list {
+            padding: 1rem;
+            padding-top: 0;
+            display: flex;
+            flex-direction: column;
+            gap: 0.8rem;
+        }
+
+        .bonus-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0.8rem 1rem;
+            background: rgba(0, 0, 0, 0.2);
+            border-radius: 8px;
+            color: var(--text-muted);
+            font-size: 0.9rem;
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            transition: all 0.2s;
+        }
+
+        .bonus-item:hover {
+            border-color: var(--accent);
+            background: rgba(255, 193, 7, 0.1);
+            color: #fff;
+            text-decoration: none;
+            transform: translateX(5px);
+        }
+
+        .thank-you-msg {
+            text-align: center;
+            margin-top: 1.5rem;
+            margin-bottom: 0.5rem;
+            font-weight: 700;
+            color: var(--accent);
+            font-size: 1.2rem;
+            text-shadow: 0 0 15px rgba(255, 193, 7, 0.4);
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0% {
+                transform: scale(1);
+                opacity: 0.9;
+            }
+
+            50% {
+                transform: scale(1.02);
+                opacity: 1;
+            }
+
+            100% {
+                transform: scale(1);
+                opacity: 0.9;
+            }
+        }
     </style>
 </head>
 
@@ -238,7 +336,9 @@
     <div class="container">
         <header>
             <h1>Brawl Stars Guide <span class="brand-mark">by boywithalo</span></h1>
-            <p class="subtitle">Секреты, тактики и полезные ссылки<br> <a href="https://playerok.com/profile/boywithalo/products">https://playerok.com/profile/boywithalo/products</a></p>
+            <p class="subtitle">Секреты, тактики и полезные ссылки<br> <a
+                    href="https://playerok.com/profile/boywithalo/products">https://playerok.com/profile/boywithalo/products</a>
+            </p>
         </header>
 
         <!-- Card: Shop -->
@@ -384,6 +484,46 @@
             </ol>
         </div>
 
+        <!-- Card: Pin Maker -->
+        <div class="card">
+            <span class="badge">Творчество</span>
+            <h2>Создание уникальных пинов</h2>
+            <p>Официальный инструмент Supercell:</p>
+            <p>
+                <a href="https://pinmaker.supercell.com/" target="_blank">pinmaker.supercell.com</a>
+                <button class="copy-btn" onclick="copyText('https://pinmaker.supercell.com/')">Копировать</button>
+            </p>
+            <ol>
+                <li>Перейди на сайт Pin Maker.</li>
+                <li>Создай свой дизайн (эмодзи, рисунок).</li>
+                <li>Скачай/сохрани его.</li>
+                <li>Обнови в игре через меню пинов (если поддерживается).</li>
+            </ol>
+            <p class="subtitle" style="margin-top: 1rem;">Где ещё брать пины:</p>
+            <ul>
+                <li>Starr Drops (случайно)</li>
+                <li>Каталог / Магазин</li>
+                <li>Награды за ивенты</li>
+            </ul>
+        </div>
+
+        <!-- Card: Pro Tips -->
+        <div class="card">
+            <span class="badge">Советы</span>
+            <h2>Что реально влияет на успех</h2>
+            <ul style="list-style: none; margin-left: 0;">
+                <li style="margin-bottom: 10px;">⭐ <strong>Игра, а не читы</strong><br><span
+                        style="font-size:0.9em; opacity:0.8">Практика + знание карт = рекордные победы.</span></li>
+                <li style="margin-bottom: 10px;">⭐ <strong>Боевой пропуск</strong><br><span
+                        style="font-size:0.9em; opacity:0.8">Даёт бонусы (цвет имени, скины, кредиты).</span></li>
+                <li style="margin-bottom: 10px;">⭐ <strong>Пины и эмодзи</strong><br><span
+                        style="font-size:0.9em; opacity:0.8">Помогают в коммуникации с командой.</span></li>
+                <li style="margin-bottom: 10px;">⭐ <strong>Магазин</strong><br><span
+                        style="font-size:0.9em; opacity:0.8">Следи за сезонными предложениями и возвратом редких
+                        предметов.</span></li>
+            </ul>
+        </div>
+
         <!-- Card 8: Star Shelly -->
         <!-- <div class="card">
             <span class="badge">Эксклюзив</span>
@@ -397,6 +537,77 @@
             <p class="subtitle">Если подарки не понравились — возврат не делается 😉</p>
         </div> -->
 
+    </div>
+
+    <!-- Card: Bonuses -->
+    <div class="card" style="border: 1px solid rgba(255, 255, 255, 0.3);">
+        <span class="badge" style="background: linear-gradient(45deg, #ff00cc, #3333ff); border: none; color: white;">🎁
+            Бонусы</span>
+        <h2>Полезное и Редкое</h2>
+        <p>Эксклюзивные гайды, паки и секреты для разных игр. Только для своих!</p>
+
+        <details class="bonus-details">
+            <summary class="bonus-summary">Нажмите, чтобы развернуть список бонусов</summary>
+            <div class="bonus-list">
+                <a href="https://disk.yandex.ru/d/XnD-pvZzZa-dMg" target="_blank" class="bonus-item">
+                    <span>1. Подборка аватарок (5 категорий)</span> <span>↗</span>
+                </a>
+                <a href="https://telegra.ph/OPTIMIZACIYA-PK-04-14" target="_blank" class="bonus-item">
+                    <span>2. Лучшая оптимизация ПК</span> <span>↗</span>
+                </a>
+                <a href="https://telegra.ph/Chat-GPT-KAK-ZAREGAT-AKK-V-RF-03-06" target="_blank" class="bonus-item">
+                    <span>3. Chat GPT: Регистрация в РФ</span> <span>↗</span>
+                </a>
+                <a href="https://telegra.ph/Clash-of-Clans-3-SPOSOBA-UZNAT-DATU-NACHALA-IGRY-NA-AKKAUNTE-03-06"
+                    target="_blank" class="bonus-item">
+                    <span>4. CoC: Узнать дату начала игры</span> <span>↗</span>
+                </a>
+                <a href="https://telegra.ph/Kak-poluchit-sekretnyj-znachok-v-Clash-Royale-03-06" target="_blank"
+                    class="bonus-item">
+                    <span>5. Секретный значок (CoC/CR)</span> <span>↗</span>
+                </a>
+                <a href="https://telegra.ph/SPOSOB-KAK-IZMENIT-SHRIFT-DOTA-2-03-06" target="_blank" class="bonus-item">
+                    <span>6. Dota 2: Изменить шрифт</span> <span>↗</span>
+                </a>
+                <a href="https://telegra.ph/-03-06-5753" target="_blank" class="bonus-item">
+                    <span>7. Fall Guys: Полный гайд</span> <span>↗</span>
+                </a>
+                <a href="https://telegra.ph/-03-06-5761" target="_blank" class="bonus-item">
+                    <span>8. Standoff 2: Невидимый ник</span> <span>↗</span>
+                </a>
+                <a href="https://telegra.ph/-03-06-5768" target="_blank" class="bonus-item">
+                    <span>9. PUBG Mobile: Раскладка в 5 пальцев</span> <span>↗</span>
+                </a>
+                <a href="https://telegra.ph/-03-06-5776" target="_blank" class="bonus-item">
+                    <span>10. Genshin Impact: Карта электрокулов</span> <span>↗</span>
+                </a>
+                <a href="https://telegra.ph/Avtovydacha--Kak-igrat-Fortine-na-iphone-03-06" target="_blank"
+                    class="bonus-item">
+                    <span>11. Fortnite на iPhone</span> <span>↗</span>
+                </a>
+                <a href="https://telegra.ph/Polnyj-gajd-po-Among-Us-03-06" target="_blank" class="bonus-item">
+                    <span>12. Полный гайд по Among Us</span> <span>↗</span>
+                </a>
+                <a href="https://docs.google.com/document/d/18lL8lh2Q7plk4O1GmFFR2jbOa9jq6FWreqot_0AW-ow/edit?usp=drivesdk"
+                    target="_blank" class="bonus-item">
+                    <span>13. Огромный пак дизайнера</span> <span>↗</span>
+                </a>
+                <a href="https://telegra.ph/SPOSOB-PONIZIT-PING-02-21" target="_blank" class="bonus-item">
+                    <span>14. Советы для понижения пинга</span> <span>↗</span>
+                </a>
+                <a href="https://telegra.ph/KAK-POVYSIT-FPS-02-21" target="_blank" class="bonus-item">
+                    <span>15. Советы для повышения FPS</span> <span>↗</span>
+                </a>
+                <a href="https://telegra.ph/KAK-SDELAT-NEVIDIMYJ-NIK-02-21" target="_blank" class="bonus-item">
+                    <span>16. Как сделать невидимый ник</span> <span>↗</span>
+                </a>
+
+                <div class="thank-you-msg">
+                    ❤️ Спасибо за покупку, приходи еще! ❤️
+                </div>
+            </div>
+        </details>
+    </div>
     </div>
 
     <footer>
